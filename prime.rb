@@ -25,3 +25,24 @@ end
 #  end
 
 #end
+
+#testing sieve of Eratosthenes
+def prime?(integer)
+
+  if integer <= 2 || integer.negative?
+    return false
+  end
+
+  max_number = (2..n).to_a #input array
+  primes = [] #primes array
+  counter = 2
+
+  while primes != nil
+    while max_number.length > 0
+      primes << max_number.first #append first number to primes
+      max_number.delete_if { |x| (x > 2) & x % primes.last == 0} #repeat until empty
+    end
+    counter += 1
+  end
+
+end
